@@ -20,7 +20,7 @@ public class Player {
     int yPosition;
     int kills;
     int range = 2;
-    
+    int speed;
     void Move(int x, int y)
     {
         xPosition += x;
@@ -52,7 +52,5 @@ public class Player {
         yPosition += y;
         System.out.println(name + " position is " + xPosition + " X " + yPosition + " Y");
     }
-    
-    
     
 }
