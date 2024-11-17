@@ -14,6 +14,9 @@ public class CmdCommand {
     public static int size = 5;
     public static void main(String[] args) {
         
+        Player pone = new Player("Trump", 0, 0);
+        Player ptwo = new Player("MOHI", 3, 3);
+        
         // Simulate a loop that prints something
         while(true) {
             try {
@@ -35,17 +38,13 @@ public class CmdCommand {
                 
                   // Size of the square
 
-                // Outer loop for each row
-                for (int s = 0; s < size; s++) {
-                    // Inner loop for each column in the row
-                    for (int j = 0; j < size; j++) {
-                        // Print '*' to form the square
-                        System.out.print("* ");
-                    }
-                    // Move to the next line after printing one row
-                    System.out.println();
-                }
+                Data.Grid();
+                Data.UpdatePlayersPosition();
+                Data.PrintArena();
+                pone.Move();
+                ptwo.Move();
                 
+                //Data.Test();
                 
                 size++;
                 // Wait for a short time before clearing again (optional)

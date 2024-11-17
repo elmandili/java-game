@@ -20,4 +20,10 @@ public class Game {
         player_two.Attack();
         
     }
+    
+    public void Move(){
+        
+    }
+    
+    
 }
