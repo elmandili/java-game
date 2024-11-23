@@ -14,8 +14,8 @@ public class CmdCommand {
     public static int size = 5;
     public static void main(String[] args) {
         
-        Player pone = new Player("Trump", 0, 0);
-        Player ptwo = new Player("MOHI", 3, 3);
+        Player pone = new Player("Trump", 5, 5);
+        Player ptwo = new Player("MOHI", 8, 8);
         
         // Simulate a loop that prints something
         while(true) {

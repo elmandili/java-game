@@ -81,11 +81,23 @@ public class Player {
         Scanner sc = new Scanner(System.in);
         String input = sc.nextLine();
         
+        
+        
         if(input.equals("d")){
-            xPosition++;
+            if(xPosition+1 == Data.arena[0].length-2 && !(isCollide(1, 0))) {
+                return;
+            }
+            else {
+                xPosition++;
+            }
         }
         else if (input.equals("a")){
-            xPosition--;
+            if(xPosition-1 == 1){
+                return;
+            }
+            else {
+                xPosition--;
+            }
         }
         else if (input.equals("w")){
         
@@ -97,9 +109,21 @@ public class Player {
         }
         
         }
+    
+    public boolean isCollide(int xOffset, int yOffset) {
+        for (Player player: Data.players){
+            if (xPosition + xOffset == player.xPosition || yPosition + yOffset == player.yPosition) {
+                return true;
+            }
+            else {
+                return false;
+            }
         
+        }
+    
         
     }
+    
 
     
 
