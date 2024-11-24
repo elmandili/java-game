@@ -152,8 +152,19 @@ public class Player {
     
     public boolean isCollide(int xOffset, int yOffset) {
         for (Player player: Data.players){
-            if (xPosition + xOffset == player.xPosition && yPosition + yOffset == player.yPosition) {           
-                return true;}
+            
+            if (player != this) {
+                int xdist = player.xPosition - (xPosition+xOffset);
+                int ydist = player.yPosition - (yPosition+yOffset);
+                double distance = Math.sqrt( Math.pow(xdist, 2) + Math.pow(ydist, 2) );
+                
+                if ( distance < 2 ) {
+                    return true;
+                }
+          
+            /*if (xPosition + xOffset == player.xPosition && yPosition + yOffset == player.yPosition) {           
+                return true;}*/
+            }
         }
         return false; 
     }
