@@ -15,7 +15,7 @@ public class CmdCommand {
     public static void main(String[] args) {
         
         Player pone = new Player("Trump", 5, 5);
-        Player ptwo = new Player("MOHI", 8, 8);
+        Player ptwo = new Player("MOHI", 9, 5);
         
         // Simulate a loop that prints something
         while(true) {
@@ -42,7 +42,7 @@ public class CmdCommand {
                 Data.UpdatePlayersPosition();
                 Data.PrintArena();
                 pone.Move();
-                ptwo.Move();
+                //ptwo.Move();
                 
                 //Data.Test();
                 

@@ -63,9 +63,6 @@ public class Player {
         System.out.println(name + " position is " + xPosition + " X " + yPosition + " Y");
     }
     
-    
-    
-    
     public void Move(){
         /*for(int i = 0; i < yPosition; i++){
             System.out.print("\n");
@@ -81,18 +78,51 @@ public class Player {
         Scanner sc = new Scanner(System.in);
         String input = sc.nextLine();
         
+        switch (input) {
+           case "d" -> {
+               if(xPosition+1 == Data.arena[0].length-2 || isCollide(2, 0)) {
+                   System.out.println("Collided from right!");
+               }
+               else { xPosition++; }
+            }
+               
+           case "a" -> {
+               if (xPosition-1 == 1 || isCollide(-2, 0) ){
+                   System.out.println("Collided from left!");
+               }
+               else { xPosition--;}
+            }
+           
+           case "w" -> {
+               if(yPosition-1 == 1 || isCollide(0, -2) ){
+                System.out.println("Collided on top!");
+            }
+               else { yPosition--;}
+           }
+           
+           case "s" -> {
+               if(yPosition+1 == Data.arena.length-2 || isCollide(0, 2)){
+                System.out.println("Collided on bottom!");
+            }
+               else { yPosition++;}
+           }
+           
+           default -> {System.out.println("Invalid input!");}
+       
+       }
         
-        
-        if(input.equals("d")){
-            if(xPosition+1 == Data.arena[0].length-2 && !(isCollide(1, 0))) {
-                return;
+       /* if(input.equals("d")){
+            if(xPosition+1 == Data.arena[0].length-2 || (isCollide(2, 0))) {
+                System.out.println("Collided from right!");
+                //return;
             }
             else {
                 xPosition++;
             }
         }
         else if (input.equals("a")){
-            if(xPosition-1 == 1){
+            if(xPosition-1 == 1 || (isCollide(-2, 0))){
+                System.out.println("Collided from left!");
                 return;
             }
             else {
@@ -100,30 +130,31 @@ public class Player {
             }
         }
         else if (input.equals("w")){
-        
+            if(yPosition-1 == 1 || (isCollide(0, -2))){
+                System.out.println("Collided on top!");
+                return;
+            }
+            else {
             yPosition--;
+            }
         }
-        else if (input.equals("s")){
-        
+        else if (input.equals("s")){ 
+            if(yPosition+1 == Data.arena.length-2 || isCollide(0, 2)){
+                System.out.println("Collided on bottom!");
+                return;
+            }
+            else {
             yPosition++;
-        }
+            }
+        } */
         
-        }
+        } 
     
     public boolean isCollide(int xOffset, int yOffset) {
         for (Player player: Data.players){
-            if (xPosition + xOffset == player.xPosition || yPosition + yOffset == player.yPosition) {
-                return true;
-            }
-            else {
-                return false;
-            }
-        
+            if (xPosition + xOffset == player.xPosition && yPosition + yOffset == player.yPosition) {           
+                return true;}
         }
-    
-        
+        return false; 
     }
-    
-
-    
-
+}

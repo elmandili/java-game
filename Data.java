@@ -62,15 +62,15 @@ public class Data {
         for(Player player: players){
             arena[player.yPosition][player.xPosition] = 'P';
             
-            arena[player.yPosition+1][player.xPosition+1]='#';
-            arena[player.yPosition-1][player.xPosition-1]='#';
-            arena[player.yPosition+1][player.xPosition-1]='#';
-            arena[player.yPosition-1][player.xPosition+1]='#';
+            arena[player.yPosition+1][player.xPosition+1]='+';
+            arena[player.yPosition-1][player.xPosition-1]='+';
+            arena[player.yPosition+1][player.xPosition-1]='+';
+            arena[player.yPosition-1][player.xPosition+1]='+';
             //X AXIS 
-            arena[player.yPosition][player.xPosition+1]='#';
-            arena[player.yPosition][player.xPosition-1]='#';
-            arena[player.yPosition+1][player.xPosition]='#';
-            arena[player.yPosition-1][player.xPosition]='#';
+            arena[player.yPosition][player.xPosition+1]='|';
+            arena[player.yPosition][player.xPosition-1]='|';
+            arena[player.yPosition+1][player.xPosition]='-';
+            arena[player.yPosition-1][player.xPosition]='-';
         }
         
     }
